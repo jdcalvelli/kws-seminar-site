@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "seminar_cards",
+  "info": {
+    "singularName": "seminar-card",
+    "pluralName": "seminar-cards",
+    "displayName": "SeminarCard"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seminarTitle": {
+      "type": "string"
+    },
+    "seminarFlavorText": {
+      "type": "richtext"
+    },
+    "seminarImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
