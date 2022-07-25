@@ -26,7 +26,7 @@ function SeminarSection(props) {
                     console.log(item)
                     return <SeminarCard key={index} 
                                         // have to figure out how to get img source
-                                        imgSrc={item.attributes.seminarImage} 
+                                        imgSrc={"http://localhost:1337" + item.attributes.seminarImage.data.attributes.url} 
                                         title = {item.attributes.seminarTitle} 
                                         flavorText={item.attributes.seminarFlavorText}/>
                 })

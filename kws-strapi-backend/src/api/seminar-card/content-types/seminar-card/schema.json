@@ -4,7 +4,8 @@
   "info": {
     "singularName": "seminar-card",
     "pluralName": "seminar-cards",
-    "displayName": "SeminarCard"
+    "displayName": "SeminarCard",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,14 +19,12 @@
       "type": "richtext"
     },
     "seminarImage": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
       "type": "media",
-      "multiple": false
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }
