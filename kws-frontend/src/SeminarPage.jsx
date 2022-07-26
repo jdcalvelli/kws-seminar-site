@@ -20,8 +20,13 @@ function SeminarPage(props) {
             <h1> this page should have the same number as the route here: {id}</h1>
 
             {!seminarData.isLoaded ? 
-            <h1>Loading...</h1> : 
-            <h1>{seminarData.seminarData.attributes.seminarTitle}</h1>
+            <h1>Loading...</h1> :
+            <div className="seminarEmbeds">
+                <h1>{seminarData.seminarData.attributes.seminarTitle}</h1>
+                <iframe src={seminarData.seminarData.attributes.embedURL} frameBorder="0"></iframe>
+                <a href={seminarData.seminarData.attributes.requiredReadingURL}> Required Reading </a>
+                <a href={seminarData.seminarData.attributes.optionalReadingURL}> Optional Reading </a>
+            </div> 
             }
         </div>
     )
