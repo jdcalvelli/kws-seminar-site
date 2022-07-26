@@ -4,7 +4,7 @@
   "info": {
     "singularName": "seminar-card",
     "pluralName": "seminar-cards",
-    "displayName": "SeminarCard",
+    "displayName": "SeminarCards",
     "description": ""
   },
   "options": {
@@ -25,6 +25,15 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "embedURL": {
+      "type": "string"
+    },
+    "requiredReadingURL": {
+      "type": "string"
+    },
+    "optionalReadingURL": {
+      "type": "string"
     }
   }
 }
