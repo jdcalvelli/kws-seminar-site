@@ -51,6 +51,19 @@ body {
     justify-content: center;
 }
 
+/* SEMINAR SECTION */
+
+.SeminarSection {
+    background: var(--accentGrey);
+
+    height: 90vh;
+}
+
+.SeminarSection .cardSection {
+    display: flex;
+    overflow-x: scroll;
+}
+
 /* SEMINAR CARD */
 
 .SeminarCard {
