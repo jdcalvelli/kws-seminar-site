@@ -4,7 +4,7 @@ import SeminarSection from "./components/SeminarSection"
 import About from "./components/About"
 import Contact from "./components/Contact"
 
-function App(props) {
+function Home(props) {
     return (
         <div className="App">
             <Nav />
@@ -16,4 +16,4 @@ function App(props) {
     )
 }
 
-export default App
+export default Home
