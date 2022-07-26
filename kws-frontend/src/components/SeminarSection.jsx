@@ -23,7 +23,7 @@ function SeminarSection(props) {
             { !cardArrayData.isLoaded ? 
                 <h1> Loading ... </h1> :
                 cardArrayData.cardArray.map((item) => {
-                    console.log(item)
+                    // console.log(item)
                     return <SeminarCard key={item.id} 
                                         id = {item.id}
                                         imgSrc={"http://localhost:1337" + item.attributes.seminarImage.data.attributes.url} 
