@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --riscOrange: #fc4512;
+    --mainTextColor: #121212;
+    --accentGrey: #808080;
+    --offWhite: rgba( 255, 255, 255, 0.85);
+}
+
+/* BODY */
+
+body {
+    background-color: var(--offWhite);
+}
+
+/* NAV BAR */
+
+.Nav {
+    height: 10vh;
+
+    padding: 8px 64px;
+
+    background-color: var(--riscOrange);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Nav a {
+    color: var(--mainTextColor);
+    text-decoration: none;
+}
+
+.Nav .rightSide {
+    display: flex;
+    gap: 32px;
+}
