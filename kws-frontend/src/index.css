@@ -50,3 +50,26 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+/* SEMINAR CARD */
+
+.SeminarCard {
+
+    width: 300px;
+
+    padding: 32px;
+    margin: 32px;
+
+    border: 3px solid var(--riscOrange);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.SeminarCard img {
+    height: 144px;
+    width: 256px;
+}
