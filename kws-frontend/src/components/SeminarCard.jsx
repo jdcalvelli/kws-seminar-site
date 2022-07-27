@@ -1,14 +1,31 @@
+import { Badge, Button, Card, Group, Image, Text } from "@mantine/core"
 import { Link } from "react-router-dom"
 
 function SeminarCard(props) {
     return (
         
-            <div className="SeminarCard">
-                <img src={props.imgSrc} alt="Seminar Image" />
-                <h1> {props.title} </h1>
-                <p>{props.flavorText}</p>
-                <Link to={`/seminars/${props.id}`}> <button>See More</button></Link>
-            </div>
+        <Card shadow="sm" p="lg" radius="md" withBorder>
+            <Card.Section mb='md'>
+                <Image 
+                    src={props.imgSrc}
+                    height={160}
+                    alt="Seminar Image"
+                />
+            </Card.Section>
+
+            <Group position="apart">
+                <Text weight={500}>{props.title}</Text>
+                <Badge>category</Badge>
+            </Group>
+
+            <Text size="sm" color="dimmed">
+                {props.flavorText}
+            </Text>
+
+            <Button variant="light" fullWidth radius="md" mt='md' component={Link} to={`/seminars/${props.id}`}>
+                See the seminar!
+            </Button>
+        </Card>
     )
 }
 
