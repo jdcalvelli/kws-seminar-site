@@ -1,9 +1,19 @@
+import { Anchor, Center, Stack, Text, Title } from "@mantine/core"
+
 function Contact(props) {
     return (
-        <div className="Contact">
-            <h1> Contact Us </h1>
-            <h3> Formik Form will go here </h3>
-        </div>
+
+        <Stack spacing='xl' style={{height: 200}}>
+            <Title mx="xl" order={1}>Contact Us</Title>
+
+            <Center style={{height: '100%'}}>
+                <Text size="xl" style={{letterSpacing: 2, fontStyle: 'italic'}}> 
+                    <Anchor href="mailto:centerforrisc@gmail.com">centerforrisc@gmail.com</Anchor>
+                </Text>
+            </Center>
+
+        </Stack>
+
     )
 }
 
