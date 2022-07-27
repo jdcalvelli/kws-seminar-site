@@ -1,4 +1,4 @@
-import { Group, Loader, ScrollArea, Select, Stack, Title } from "@mantine/core"
+import { Center, Group, Loader, ScrollArea, Select, SimpleGrid, Stack, Title } from "@mantine/core"
 import { useState, useEffect } from "react"
 import getSeminarCards from "../tasks/getSeminarCards"
 
@@ -40,20 +40,23 @@ function SeminarSection(props) {
                 m="xl"
             />
 
-            <ScrollArea sx={{width: '100%'}} scrollbarSize={2}>
-                <Group noWrap mx='xl'>
-                    {!cardArrayData.isLoaded ?
-                        <Loader size="xl" variant="dots"/> :
-                        cardArrayData.cardArray.map((item) => {
-                            // console.log(item)
-                            return <SeminarCard key={item.id}
-                                id={item.id}
-                                imgSrc={"http://localhost:1337" + item.attributes.seminarImage.data.attributes.url}
-                                title={item.attributes.seminarTitle}
-                                flavorText={item.attributes.seminarFlavorText} />
-                        })
-                    }
-                </Group>
+            <ScrollArea sx={{ height: 650, width: '100%' }} scrollbarSize={2}>
+                <Center>
+                    <SimpleGrid cols={2} spacing="xl" mx="xl">
+                        {!cardArrayData.isLoaded ?
+                            <Loader size="xl" variant="dots" /> :
+                            cardArrayData.cardArray.map((item) => {
+                                // console.log(item)
+                                return <SeminarCard key={item.id}
+                                    id={item.id}
+                                    imgSrc={"http://localhost:1337" + item.attributes.seminarImage.data.attributes.url}
+                                    title={item.attributes.seminarTitle}
+                                    flavorText={item.attributes.seminarFlavorText} />
+                            })
+                        }
+                    </SimpleGrid>
+                </Center>
+
             </ScrollArea>
 
         </Stack>
