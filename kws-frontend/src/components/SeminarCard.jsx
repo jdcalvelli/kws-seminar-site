@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 function SeminarCard(props) {
     return (
         
-        <Card shadow="sm" p="lg" radius="md" withBorder>
+        <Card shadow="sm" p="lg" radius="md" withBorder style={{width: 600}}>
             <Card.Section mb='md'>
                 <Image 
                     src={props.imgSrc}
@@ -13,7 +13,7 @@ function SeminarCard(props) {
                 />
             </Card.Section>
 
-            <Group position="apart">
+            <Group position="apart" noWrap>
                 <Text weight={500}>{props.title}</Text>
                 <Badge>category</Badge>
             </Group>

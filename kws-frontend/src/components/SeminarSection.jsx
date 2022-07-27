@@ -1,3 +1,4 @@
+import { Group, Loader, ScrollArea, Select, Stack } from "@mantine/core"
 import { useState, useEffect } from "react"
 import getSeminarCards from "../tasks/getSeminarCards"
 
@@ -16,25 +17,63 @@ function SeminarSection(props) {
     }, [])
 
     return (
-        <div className="SeminarSection">
-            <h1> this will contain individual seminar cards </h1>
-            <h1> this will also contain the filtering method somehow </h1>
 
-            <div className="cardSection">
-                {!cardArrayData.isLoaded ?
-                    <h1> Loading ... </h1> :
-                    cardArrayData.cardArray.map((item) => {
-                        // console.log(item)
-                        return <SeminarCard key={item.id}
-                            id={item.id}
-                            imgSrc={"http://localhost:1337" + item.attributes.seminarImage.data.attributes.url}
-                            title={item.attributes.seminarTitle}
-                            flavorText={item.attributes.seminarFlavorText} />
-                    })
-                }
-            </div>
+        // stack 
+        // filter by category on top input with a dropdown
+        // then a grid section to contain the cards
+        // use loading dots where necessary
 
-        </div>
+        // not doing the filtering logic now that will come later
+
+        <Stack spacing='xl'>
+            <Select
+                label="Filter by category:"
+                placeholder="Category"
+                data={[
+                    { value: "category1", label: "Category 1" },
+                    { value: "category2", label: "Category 2" },
+                ]}
+                sx={{ width: 300 }}
+                m="xl"
+            />
+
+            <ScrollArea sx={{width: '100%'}} scrollbarSize={2}>
+                <Group noWrap mx='xl'>
+                    {!cardArrayData.isLoaded ?
+                        <Loader size="xl" variant="dots"/> :
+                        cardArrayData.cardArray.map((item) => {
+                            // console.log(item)
+                            return <SeminarCard key={item.id}
+                                id={item.id}
+                                imgSrc={"http://localhost:1337" + item.attributes.seminarImage.data.attributes.url}
+                                title={item.attributes.seminarTitle}
+                                flavorText={item.attributes.seminarFlavorText} />
+                        })
+                    }
+                </Group>
+            </ScrollArea>
+
+        </Stack>
+
+        // <div className="SeminarSection">
+        //     <h1> this will contain individual seminar cards </h1>
+        //     <h1> this will also contain the filtering method somehow </h1>
+
+        //     <div className="cardSection">
+        //         {!cardArrayData.isLoaded ?
+        //             <h1> Loading ... </h1> :
+        //             cardArrayData.cardArray.map((item) => {
+        //                 // console.log(item)
+        //                 return <SeminarCard key={item.id}
+        //                     id={item.id}
+        //                     imgSrc={"http://localhost:1337" + item.attributes.seminarImage.data.attributes.url}
+        //                     title={item.attributes.seminarTitle}
+        //                     flavorText={item.attributes.seminarFlavorText} />
+        //             })
+        //         }
+        //     </div>
+
+        // </div>
     )
 }
 
