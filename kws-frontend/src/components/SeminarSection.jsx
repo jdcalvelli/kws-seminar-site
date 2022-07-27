@@ -1,4 +1,4 @@
-import { Group, Loader, ScrollArea, Select, Stack } from "@mantine/core"
+import { Group, Loader, ScrollArea, Select, Stack, Title } from "@mantine/core"
 import { useState, useEffect } from "react"
 import getSeminarCards from "../tasks/getSeminarCards"
 
@@ -26,6 +26,9 @@ function SeminarSection(props) {
         // not doing the filtering logic now that will come later
 
         <Stack spacing='xl'>
+
+            <Title order={1} mx="xl">The Seminars</Title>
+
             <Select
                 label="Filter by category:"
                 placeholder="Category"
