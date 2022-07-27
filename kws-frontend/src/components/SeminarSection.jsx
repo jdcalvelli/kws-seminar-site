@@ -54,26 +54,6 @@ function SeminarSection(props) {
             </ScrollArea>
 
         </Stack>
-
-        // <div className="SeminarSection">
-        //     <h1> this will contain individual seminar cards </h1>
-        //     <h1> this will also contain the filtering method somehow </h1>
-
-        //     <div className="cardSection">
-        //         {!cardArrayData.isLoaded ?
-        //             <h1> Loading ... </h1> :
-        //             cardArrayData.cardArray.map((item) => {
-        //                 // console.log(item)
-        //                 return <SeminarCard key={item.id}
-        //                     id={item.id}
-        //                     imgSrc={"http://localhost:1337" + item.attributes.seminarImage.data.attributes.url}
-        //                     title={item.attributes.seminarTitle}
-        //                     flavorText={item.attributes.seminarFlavorText} />
-        //             })
-        //         }
-        //     </div>
-
-        // </div>
     )
 }
 
