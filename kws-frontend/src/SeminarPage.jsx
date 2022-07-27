@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom"
 import getSeminar from "./tasks/getSeminar"
 
 import Nav from "./components/Nav"
+import Footer from "./components/Footer"
 
 function SeminarPage(props) {
     const [seminarData, setSeminarData] = useState({isLoaded: false, seminarData: {}})
@@ -28,6 +29,8 @@ function SeminarPage(props) {
                 <a href={seminarData.seminarData.attributes.optionalReadingURL}> Optional Reading </a>
             </div> 
             }
+
+            <Footer />
         </div>
     )
 }

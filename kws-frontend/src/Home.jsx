@@ -4,6 +4,7 @@ import SeminarSection from "./components/SeminarSection"
 import About from "./components/About"
 import Contact from "./components/Contact"
 import { MantineProvider } from "@mantine/core"
+import Footer from "./components/Footer"
 
 function Home(props) {
     return (
@@ -14,6 +15,7 @@ function Home(props) {
                 <SeminarSection />
                 <About />
                 <Contact />
+                <Footer />
             </div>
         </MantineProvider>
     )
