@@ -25,7 +25,7 @@ function SeminarSection(props) {
 
         // not doing the filtering logic now that will come later
 
-        <Stack spacing='xl'>
+        <Stack spacing='xl' id="Seminars">
 
             <Title order={1} mx="xl">The Seminars</Title>
 

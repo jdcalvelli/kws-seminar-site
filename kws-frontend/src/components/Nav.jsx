@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import { Link as LinkRS } from 'react-scroll'
 
 import { Anchor, Button, Group, Header, Title } from '@mantine/core'
 
@@ -11,9 +12,9 @@ function Nav(props) {
                 <Title order={1}><Anchor component={Link} to="/">kws</Anchor></Title>
 
                 <Group spacing="xl">
-                    <Title order={3}>seminars</Title>
-                    <Title order={3}>about</Title>
-                    <Button radius="xl">contact</Button>
+                    <Title order={3}><LinkRS to="Seminars" spy={true} smooth={true} offset={0} duration={500}>seminars</LinkRS></Title>
+                    <Title order={3}><LinkRS to="About" spy={true} smooth={true} offset={0} duration={500}>about</LinkRS></Title>
+                    <Button radius="xl"><LinkRS to="Contact" spy={true} smooth={true} offset={0} duration={500}>contact</LinkRS></Button>
                 </Group>
             </Group>
         </Header>

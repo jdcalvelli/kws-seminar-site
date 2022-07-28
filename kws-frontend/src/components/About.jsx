@@ -2,7 +2,7 @@ import { Group, Image, Stack, Text, Title } from "@mantine/core"
 
 function About(props) {
     return (
-        <Stack spacing="xl" style={{height: 600}} justify="center">
+        <Stack spacing="xl" style={{height: 600}} justify="center" id="About">
             <Title order={1} mx="xl">About Us</Title>
             <Group noWrap spacing="xl">
                 <Text mx="xl" style={{width: '50%'}}> The Center for RISC is the brainchild of Steven Levitt, 
