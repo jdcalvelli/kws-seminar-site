@@ -8,7 +8,7 @@ import Footer from "./components/Footer"
 
 function Home(props) {
     return (
-        <MantineProvider>
+        <MantineProvider theme={{primaryColor: 'orange'}}>
             <div className="App">
                 <Nav />
                 <Hero />
