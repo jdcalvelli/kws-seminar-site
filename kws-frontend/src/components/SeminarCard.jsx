@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 function SeminarCard(props) {
     return (
         
-        <Card shadow="sm" p="lg" radius="md" withBorder style={{width: 600}}>
+        <Card shadow="sm" p="lg" radius="md" withBorder style={{width: '90%'}}>
             <Card.Section mb='md'>
                 <Image 
                     src={props.imgSrc}
