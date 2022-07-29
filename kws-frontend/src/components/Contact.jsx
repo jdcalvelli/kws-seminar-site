@@ -8,7 +8,7 @@ function Contact(props) {
 
             <Center style={{height: '100%'}}>
                 <Text size="xl" style={{letterSpacing: 2, fontStyle: 'italic'}}> 
-                    <Anchor href="mailto:centerforrisc@gmail.com">centerforrisc@gmail.com</Anchor>
+                    <Anchor href={`mailto:${props.contactEmail}`}>{props.contactEmail}</Anchor>
                 </Text>
             </Center>
 
