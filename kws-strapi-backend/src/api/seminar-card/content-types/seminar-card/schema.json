@@ -34,6 +34,12 @@
     },
     "optionalReadingURL": {
       "type": "string"
+    },
+    "seminar_category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::seminar-category.seminar-category",
+      "inversedBy": "seminar_cards"
     }
   }
 }

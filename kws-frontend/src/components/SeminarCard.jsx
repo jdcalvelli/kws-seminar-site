@@ -15,7 +15,7 @@ function SeminarCard(props) {
 
             <Group position="apart" noWrap>
                 <Text weight={500}>{props.title}</Text>
-                <Badge>category</Badge>
+                <Badge>{props.category}</Badge>
             </Group>
 
             <Text size="sm" color="dimmed">

@@ -1,5 +1,6 @@
 import { Center, Group, Loader, ScrollArea, Select, SimpleGrid, Stack, Title } from "@mantine/core"
 import { useState, useEffect } from "react"
+import getCategories from "../tasks/getCategories"
 import getSeminarCards from "../tasks/getSeminarCards"
 
 import SeminarCard from "./SeminarCard"
@@ -7,6 +8,7 @@ import SeminarCard from "./SeminarCard"
 function SeminarSection(props) {
 
     const [cardArrayData, setCardArrayData] = useState({ isLoaded: false, cardArray: [] })
+    const [categoriesData, setCategoriesData] = useState({isLoaded: false, categoriesData: []})
 
     // have to use get effect for on component mount to pull data
     // have to capture both potentials for is loaded return and is not loaded
@@ -14,6 +16,7 @@ function SeminarSection(props) {
     //empty dependency array = like class based component did mount
     useEffect(() => {
         getSeminarCards(setCardArrayData)
+        getCategories(setCategoriesData)
     }, [])
 
     return (
@@ -32,10 +35,11 @@ function SeminarSection(props) {
             <Select
                 label="Filter by category:"
                 placeholder="Category"
-                data={[
-                    { value: "category1", label: "Category 1" },
-                    { value: "category2", label: "Category 2" },
-                ]}
+                data={
+                    categoriesData.categoriesData.map((item) => {
+                        return {value: item.attributes.CategoryName, label: item.attributes.CategoryName}
+                    })
+                }
                 sx={{ width: 300 }}
                 mx='xl'
                 mb="xl"
@@ -59,7 +63,9 @@ function SeminarSection(props) {
                                     id={item.id}
                                     imgSrc={"http://localhost:1337" + item.attributes.seminarImage.data.attributes.url}
                                     title={item.attributes.seminarTitle}
-                                    flavorText={item.attributes.seminarFlavorText} />
+                                    flavorText={item.attributes.seminarFlavorText} 
+                                    category={item.attributes.seminar_category.data.attributes.CategoryName}
+                                    />
                             })
                         }
                     </SimpleGrid>

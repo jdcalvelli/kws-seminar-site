@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "seminar_categories",
+  "info": {
+    "singularName": "seminar-category",
+    "pluralName": "seminar-categories",
+    "displayName": "SeminarCategory"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "CategoryName": {
+      "type": "string"
+    },
+    "seminar_cards": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::seminar-card.seminar-card",
+      "mappedBy": "seminar_category"
+    }
+  }
+}
