@@ -25,7 +25,7 @@ function SeminarSection(props) {
 
         // not doing the filtering logic now that will come later
 
-        <Stack spacing='xl' id="Seminars">
+        <Stack spacing='xl' id="Seminars" p='xl'>
 
             <Title order={1} mx="xl">The Seminars</Title>
 
@@ -37,12 +37,20 @@ function SeminarSection(props) {
                     { value: "category2", label: "Category 2" },
                 ]}
                 sx={{ width: 300 }}
-                m="xl"
+                mx='xl'
+                mb="xl"
             />
 
-            <ScrollArea sx={{ height: 650, width: '100%' }} scrollbarSize={2}>
+            <ScrollArea sx={{ height: '80vh', width: '100%' }} scrollbarSize={2}>
                 <Center>
-                    <SimpleGrid cols={2} spacing="xl" mx="xl">
+                    <SimpleGrid 
+                        cols={2} 
+                        spacing="xl" 
+                        mx="xl" 
+                        breakpoints={[
+                            {maxWidth: 'lg', cols: 1}
+                        ]}
+                    >
                         {!cardArrayData.isLoaded ?
                             <Loader size="xl" variant="dots" /> :
                             cardArrayData.cardArray.map((item) => {

@@ -3,7 +3,7 @@ import { Anchor, Center, Stack, Text, Title } from "@mantine/core"
 function Contact(props) {
     return (
 
-        <Stack spacing='xl' style={{height: 200}} id="Contact">
+        <Stack p='xl' spacing='xl' id="Contact" m='xl'>
             <Title mx="xl" order={1}>Contact Us</Title>
 
             <Center style={{height: '100%'}}>
