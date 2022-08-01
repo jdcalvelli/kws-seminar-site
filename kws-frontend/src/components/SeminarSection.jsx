@@ -1,4 +1,4 @@
-import { Button, Center, Group, Loader, ScrollArea, Select, SimpleGrid, Stack, Title } from "@mantine/core"
+import { Button, Center, Group, Loader, NativeSelect, ScrollArea, Select, SimpleGrid, Stack, Title } from "@mantine/core"
 import { useState, useEffect } from "react"
 import getCategories from "../tasks/getCategories"
 import getSeminarCards from "../tasks/getSeminarCards"
@@ -29,7 +29,7 @@ function SeminarSection(props) {
             <Title order={1} mx="xl">The Seminars</Title>
 
             <Group>
-                <Select
+                <NativeSelect
                     label="Filter by category:"
                     placeholder="Category"
                     data={
@@ -40,11 +40,14 @@ function SeminarSection(props) {
                     sx={{ width: 300 }}
                     mx='xl'
                     mb="xl"
+                    onChange={(event)=>{
+                        setCurrentCategory(event.currentTarget.value)
+                    }}
                 /> 
 
                 <Button
                     onClick={async () => {
-                        let result = await getCardsByFilter('Science / Technology')
+                        let result = await getCardsByFilter(currentCategory)
                         console.log(result)
                         setCardArrayData({isLoaded: true, cardArray: result})
                         }}>
