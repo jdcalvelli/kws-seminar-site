@@ -50,8 +50,17 @@ function SeminarSection(props) {
                         let result = await getCardsByFilter(currentCategory)
                         console.log(result)
                         setCardArrayData({isLoaded: true, cardArray: result})
-                        }}>
+                        }}
+                    >
                     Filter
+                </Button>
+
+                <Button
+                    onClick={() => {
+                        getSeminarCards(setCardArrayData)
+                        }}
+                    >
+                    Show All
                 </Button>
 
             </Group>
