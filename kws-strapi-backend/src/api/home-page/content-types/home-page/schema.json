@@ -4,7 +4,8 @@
   "info": {
     "singularName": "home-page",
     "pluralName": "home-pages",
-    "displayName": "homePage"
+    "displayName": "homePage",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,26 +13,28 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "subtitle": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "aboutUs": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "riscImage": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
       "type": "media",
-      "multiple": false
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "contactEmail": {
-      "type": "string"
+      "type": "string",
+      "required": true
     }
   }
 }

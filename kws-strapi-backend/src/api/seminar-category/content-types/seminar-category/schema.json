@@ -4,7 +4,8 @@
   "info": {
     "singularName": "seminar-category",
     "pluralName": "seminar-categories",
-    "displayName": "SeminarCategory"
+    "displayName": "SeminarCategory",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,7 +13,8 @@
   "pluginOptions": {},
   "attributes": {
     "CategoryName": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "seminar_cards": {
       "type": "relation",

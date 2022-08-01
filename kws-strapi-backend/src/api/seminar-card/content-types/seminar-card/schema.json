@@ -13,27 +13,32 @@
   "pluginOptions": {},
   "attributes": {
     "seminarTitle": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "seminarFlavorText": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "seminarImage": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ]
     },
     "embedURL": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "requiredReadingURL": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "optionalReadingURL": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "seminar_category": {
       "type": "relation",
