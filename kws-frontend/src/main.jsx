@@ -8,7 +8,7 @@ import SeminarPage from './SeminarPage'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-      <BrowserRouter>
+      <BrowserRouter basename="/seminars">
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/seminars/:id' element={<SeminarPage />}></Route>
