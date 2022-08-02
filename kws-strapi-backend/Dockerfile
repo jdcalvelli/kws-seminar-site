@@ -4,11 +4,11 @@ RUN apt-get update && apt-get install libvips-dev -y
 ARG NODE_ENV=development
 ENV NODE_ENV=${NODE_ENV}
 WORKDIR /opt/
-COPY ./package.json ./package-lock.json ./
+COPY ./package.json ./yarn.lock ./
 ENV PATH /opt/node_modules.bin:$PATH
-RUN npm install
+RUN yarn config set network-timeout 600000 -g && yarn install
 WORKDIR /opt/app
 COPY ./ .
-run npm run build
+run yarn build
 EXPOSE 1337
-CMD ["npm", "run", "develop"]
+CMD ["yarn", "develop"]
