@@ -27,8 +27,8 @@ function SeminarPage(props) {
                         <Title order={1} m='xl'>{seminarData.seminarData.attributes.seminarTitle}</Title>
                         <iframe src={seminarData.seminarData.attributes.embedURL} frameBorder="0" style={{ padding: 36, height: '80vh' }}></iframe>
                         <Group p='xl' position="center">
-                            <Anchor href={seminarData.seminarData.attributes.requiredReadingURL}><Button size="xl">required readings</Button></Anchor>
-                            <Anchor href={seminarData.seminarData.attributes.optionalReadingURL}><Button size="xl">optional readings</Button></Anchor>
+                            <Button size="xl" onClick={() => {window.location.replace(seminarData.seminarData.attributes.requiredReadingURL)}}>Required Readings</Button>
+                            <Button size="xl" onClick={() => {window.location.replace(seminarData.seminarData.attributes.optionalReadingURL)}}>Optional Readings</Button>
                         </Group>
                     </Stack>
                 }
