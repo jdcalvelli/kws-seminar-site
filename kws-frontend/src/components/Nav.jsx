@@ -19,9 +19,9 @@ function Nav(props) {
 
                 {id === undefined ?
                     <Group spacing="xl">
-                        <Title order={3}><LinkRS to="Seminars" spy={true} smooth={true} offset={160} duration={500}>seminars</LinkRS></Title>
-                        <Title order={3}><LinkRS to="About" spy={true} smooth={true} offset={0} duration={500}>about</LinkRS></Title>
-                        <Button radius="xl"><LinkRS to="Contact" spy={true} smooth={true} offset={0} duration={500}>contact</LinkRS></Button>
+                        <Title order={3} sx={{":hover": {cursor: "pointer"}}}><LinkRS to="Seminars" spy={true} smooth={true} offset={160} duration={500}>Seminars</LinkRS></Title>
+                        <Title order={3} sx={{":hover": {cursor: "pointer"}}}><LinkRS to="About" spy={true} smooth={true} offset={0} duration={500}>About</LinkRS></Title>
+                        <Button radius="xl"><LinkRS to="Contact" spy={true} smooth={true} offset={0} duration={500}>Contact</LinkRS></Button>
                     </Group> :
                     null
                 }
