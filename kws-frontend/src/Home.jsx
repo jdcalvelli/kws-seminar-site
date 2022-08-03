@@ -22,7 +22,9 @@ function Home(props) {
             {!homePageData.isLoaded ?
                 <Center><Loader size='xl' variant="dots"></Loader></Center> :
                 <div className="App">
-                    <Nav />
+                    <Nav 
+                        imgSrc={"https://kws-seminar-api.com" + homePageData.homePageData.attributes.riscImage.data.attributes.url}
+                    />
                     <Hero title={homePageData.homePageData.attributes.title} subtitle={homePageData.homePageData.attributes.subtitle}/>
                     <SeminarSection />
                     <About 

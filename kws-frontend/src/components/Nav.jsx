@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router-dom"
 import { Link as LinkRS } from 'react-scroll'
 
-import { Anchor, Button, Group, Header, Title } from '@mantine/core'
+import { Anchor, Button, Group, Header, Image, Title } from '@mantine/core'
 
 
 
@@ -15,7 +15,10 @@ function Nav(props) {
 
         <Header height={80}>
             <Group align="center" position="apart" sx={{ height: '100%' }} px="xl">
-                <Title order={1}><Anchor component={Link} to="/">kws</Anchor></Title>
+
+                <Anchor component={Link} to="/"><Image sx={{ height: 60, width: 60 }} src={props.imgSrc}></Image></Anchor>
+
+                {/* <Title order={1}><Anchor component={Link} to="/">kws</Anchor></Title> */}
 
                 {id === undefined ?
                     <Group spacing="xl">
