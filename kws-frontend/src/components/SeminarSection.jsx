@@ -85,7 +85,7 @@ function SeminarSection(props) {
                                 // console.log(item)
                                 return <SeminarCard key={item.id}
                                     id={item.id}
-                                    imgSrc={"http://localhost:1337" + item.attributes.seminarImage.data.attributes.url}
+                                    imgSrc={"https://kws-seminar-api.com" + item.attributes.seminarImage.data.attributes.url}
                                     title={item.attributes.seminarTitle}
                                     flavorText={item.attributes.seminarFlavorText}
                                     category={item.attributes.seminar_category.data.attributes.CategoryName}
