@@ -27,7 +27,7 @@ function Home(props) {
                     <SeminarSection />
                     <About 
                         aboutText={homePageData.homePageData.attributes.aboutUs} 
-                        imgSrc={"http://167.172.139.163:1337" + homePageData.homePageData.attributes.riscImage.data.attributes.url}
+                        imgSrc={"https://kws-seminar-api.com" + homePageData.homePageData.attributes.riscImage.data.attributes.url}
                     />
                     <Contact 
                         contactEmail={homePageData.homePageData.attributes.contactEmail}/>
