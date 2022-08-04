@@ -20,7 +20,7 @@
       "type": "string",
       "required": true
     },
-    "aboutUs": {
+    "aboutSeminar": {
       "type": "richtext",
       "required": true
     },
@@ -34,6 +34,10 @@
     },
     "contactEmail": {
       "type": "string",
+      "required": true
+    },
+    "aboutRISC": {
+      "type": "richtext",
       "required": true
     }
   }
