@@ -1,4 +1,5 @@
 import { Group, Image, MediaQuery, Stack, Text, Title } from "@mantine/core"
+import ReactMarkdown from "react-markdown"
 
 function About(props) {
     return (
@@ -12,7 +13,12 @@ function About(props) {
                 }}
             >
                 <Group noWrap spacing="xl" position="center" align='center'>
-                    <Text mx="xl" style={{ width: '50%' }}>{props.aboutText}</Text>
+                    {/* <Text mx="xl" style={{ width: '50%' }}>{props.aboutText}</Text> */}
+                    
+                    <Stack style={{width: '75%'}}>
+                        <Text sx={{'a': {color: 'orange', textDecoration: 'none'}}}><ReactMarkdown>{props.aboutSeminar}</ReactMarkdown></Text>
+                        <Text sx={{'a': {color: 'orange', textDecoration: 'none'}}}><ReactMarkdown>{props.aboutRISC}</ReactMarkdown></Text>
+                    </Stack>
 
                     <Image sx={{ height: 200, width: 200 }} src={props.imgSrc} px="xl"></Image>
                 </Group>
