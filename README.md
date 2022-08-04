@@ -16,3 +16,7 @@ A full stack web application built using React and Strapi for the Center for RIS
   - Nginx Proxy Mangager
   - PM2 Node Process Manager
   - ServeJS
+
+### P.S.
+
+I feel compelled to share that this was put together entirely from scratch in the final two weeks before my departure from the Center for RISC to pursue my MFA in Game Design at NYU!
