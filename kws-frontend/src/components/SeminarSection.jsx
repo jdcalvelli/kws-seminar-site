@@ -61,6 +61,7 @@ function SeminarSection(props) {
 
                 <Button
                     onClick={() => {
+                        setPage(2)
                         getSeminarCards(1, setCardArrayData)
                     }}
                 >
