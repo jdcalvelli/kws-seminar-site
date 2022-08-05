@@ -6,7 +6,7 @@ import getHomePage from "./tasks/getHomePage"
 
 import Nav from "./components/Nav"
 import Footer from "./components/Footer"
-import { Anchor, Button, Center, Group, Loader, MantineProvider, Stack, Title } from "@mantine/core"
+import { Button, Center, Group, Loader, MantineProvider, Stack, Title } from "@mantine/core"
 
 function SeminarPage(props) {
 

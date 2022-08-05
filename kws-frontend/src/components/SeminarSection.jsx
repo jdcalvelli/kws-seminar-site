@@ -1,4 +1,4 @@
-import { Button, Center, Group, Loader, NativeSelect, ScrollArea, Select, SimpleGrid, Stack, Title } from "@mantine/core"
+import { Button, Center, Group, Loader, NativeSelect, ScrollArea, SimpleGrid, Stack, Title } from "@mantine/core"
 import { useState, useEffect } from "react"
 import getCategories from "../tasks/getCategories"
 import getSeminarCards from "../tasks/getSeminarCards"
@@ -7,6 +7,8 @@ import getCardsByFilter from "../tasks/getCardsByFilter"
 import SeminarCard from "./SeminarCard"
 
 function SeminarSection(props) {
+
+    const [page, setPage] = useState(1)
 
     const [cardArrayData, setCardArrayData] = useState({ isLoaded: false, cardArray: [] })
     const [categoriesData, setCategoriesData] = useState({ isLoaded: false, categoriesData: [] })
@@ -18,8 +20,10 @@ function SeminarSection(props) {
 
     //empty dependency array = like class based component did mount
     useEffect(() => {
-        getSeminarCards(setCardArrayData)
+        getSeminarCards(page, setCardArrayData)
         getCategories(setCategoriesData)
+
+        setPage(page + 1)
     }, [])
 
     return (
@@ -40,26 +44,26 @@ function SeminarSection(props) {
                     sx={{ width: 300 }}
                     mx='xl'
                     mb="xl"
-                    onChange={(event)=>{
+                    onChange={(event) => {
                         setCurrentCategory(event.currentTarget.value)
                     }}
-                /> 
+                />
 
                 <Button
                     onClick={async () => {
                         let result = await getCardsByFilter(currentCategory)
                         console.log(result)
-                        setCardArrayData({isLoaded: true, cardArray: result})
-                        }}
-                    >
+                        setCardArrayData({ isLoaded: true, cardArray: result })
+                    }}
+                >
                     Filter
                 </Button>
 
                 <Button
                     onClick={() => {
-                        getSeminarCards(setCardArrayData)
-                        }}
-                    >
+                        getSeminarCards(1, setCardArrayData)
+                    }}
+                >
                     Show All
                 </Button>
 
@@ -96,6 +100,17 @@ function SeminarSection(props) {
                 </Center>
 
             </ScrollArea>
+
+            <Button
+                onClick={() => {
+                    console.log(page)
+                    setPage(page + 1)
+                    console.log(page)
+                    getSeminarCards(page, setCardArrayData)
+                }}
+            >
+                Load More Seminars
+            </Button>
 
         </Stack>
     )
